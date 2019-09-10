@@ -155,9 +155,9 @@ LOGIN_URL = '/user/login/'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = False
@@ -214,3 +214,28 @@ CORS_ALLOW_HEADERS = (
 )
 
 
+# 如果要设置为灵活可切换状态可以这样写
+QINIU = True # DEBUG下面最好
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/2.1/howto/static-files/
+# 富文本编辑器文件上传设置 文件上传相关
+MEDIA_URL = '/media/' # 见七牛静态文件部署
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 见七牛静态文件部署
+CKEDITOR_UPLOAD_PATH = 'upload/'
+# 七牛静态文件储存
+if QINIU:
+    del MEDIA_URL, MEDIA_ROOT, STATIC_URL
+    QINIU_ACCESS_KEY = '-qvUXYiajsyabe-HaljEHd1rFcd_kFCRY8n-mlvl'
+    QINIU_SECRET_KEY = 'FXvPeYRh5VZYJ8CLEl9jlVijm2ukNtQOafP-dyEE'
+    QINIU_BUCKET_NAME = 'wswjy'
+    QINIU_BUCKET_DOMAIN = 'pxk8eal6x.bkt.clouddn.com'
+    QINIU_SECURE_URL = False  # 使用http
+    PREFIX_URL = 'http://'
+    # 文件系统更改
+    DEFAULT_FILE_STORAGE = 'qiniustorage.backends.QiniuMediaStorage'
+    MEDIA_URL = PREFIX_URL + QINIU_BUCKET_DOMAIN + "/media/"
+    # MEDIA_ROOT = 'media'
+    # 静态文件部分
+    STATIC_URL = QINIU_BUCKET_DOMAIN + '/static/'
+    STATIC_ROOT = 'static'  # 自己想要的前缀默认static
+    STATICFILES_STORAGE = 'qiniustorage.backends.QiniuStaticStorage'
