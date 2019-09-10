@@ -21,11 +21,13 @@
 	</div>
 
 	<div class="center_con clearfix">
+        <!-- 商品分类 -->
 		<ul class="subnav fl">
             {% for type in types %}
 			    <li><a href="#model0{{ forloop.counter }}" class="{{ type.logo }}">{{ type.name }}</a></li>
             {% endfor %}
 		</ul>
+        <!-- 轮播图 -->
 		<div class="slide fl">
 			<ul class="slide_pics">
                 {% for banner in goods_banners  %}
@@ -36,6 +38,7 @@
 			<div class="next"></div>
 			<ul class="points"></ul>
 		</div>
+        <!-- 促销活动 -->
 		<div class="adv fl">
             {% for banner in promotion_banners %}
 			    <a href="{{ banner.url }}"><img src="{{ banner.image.url }}"></a>
@@ -44,8 +47,10 @@
 	</div>
 
     {% for type in types %}
+    <!-- 分类商品 -->
 	<div class="list_model">
 		<div class="list_title clearfix">
+            <!-- {{ forloop.counter }} 获取当前循环次数 -->
 			<h3 class="fl" id="model0{{ forloop.counter }}">{{ type.name }}</h3>
 			<div class="subtitle fl">
 				<span>|</span>

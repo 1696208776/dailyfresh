@@ -44,6 +44,9 @@ class IndexView(View):
             }
             cache.set('index_page_data', context, 3600)
 
+        else:
+            print('缓存中为空')
+
         # 获取首页购物车的数目
         if request.user.is_authenticated:
             conn = get_redis_connection('default')
