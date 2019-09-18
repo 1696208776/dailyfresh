@@ -21,5 +21,7 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
     path('user/', include('apps.user.urls')),
     path('cart/', include('apps.cart.urls')),
+    path('order/',include('apps.order.urls')),
+    path('search/',include('haystack.urls')),  # 全文检索框架
     path('', include('apps.goods.urls')),
 ]

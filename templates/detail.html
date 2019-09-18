@@ -13,7 +13,7 @@
 	</div>
 
 	<div class="goods_detail_con clearfix">
-		<div class="goods_detail_pic fl"><img src="{{ sku.image.url }}"></div>
+		<div class="goods_detail_pic fl">{% for foo in good_image %}<img src="{{ foo.image.url }}">{% endfor %}</div>
 		<div class="goods_detail_list fr">
 			<h3>{{ sku.name }}</h3>
 			<p>{{ sku.desc }}</p>
@@ -38,7 +38,7 @@
                 </ul>
             </div>
 
-			<div class="total">总价：<em>16.80元</em></div>
+			<div class="total">总价：<em></em></div>
 			<div class="operate_btn">
                 {% csrf_token %}
 				<a href="javascript:;" class="buy_btn">立即购买</a>
@@ -78,9 +78,9 @@
 
             <div class="tab_content" id="tab_comment" style="display: none">
 				<dl>
-                    {% for order in sku_orders %}
-					<dt>评论时间：{{ order.update_time }}&nbsp;&nbsp;用户名:{{ order.order.user.username }}</dt>
-                    <dd>评论内容:{{ order.comment }}</dd>
+                    {% for comment in sku_order_comment %}
+					<dt>评论时间：{{ comment.update_time }}&nbsp;&nbsp;用户名:{{ comment.order.user.username }}</dt>
+                    <dd>评论内容:{{ comment.comment }}</dd>
                     {% endfor %}
 				</dl>
 			</div>
@@ -173,16 +173,15 @@
 
 		$('#add_cart').click(function(){
             // 获取商品id和商品数量
-            sku_id = $(this).attr('sku_id') // attr prop
-            count = $('.num_show').val()
+            sku_id = $(this).attr('sku_id'); // attr prop
+            count = $('.num_show').val();
 
-            {# 手动添加csrf进行ajax的post请求 #}
-            csrf = $('input[name="csrfmiddlewaretoken"]').val()
+            csrf = $('input[name="csrfmiddlewaretoken"]').val();
             // 组织参数
             params = {'sku_id':sku_id, 'count':count, 'csrfmiddlewaretoken':csrf}
             // 发起ajax post请求，访问/cart/add, 传递参数:sku_id count
-            $.post('/cart/add', params, function (data) {
-                if (data.res == 5){
+            $.post('{% url "cart:add" %}', params, function (data) {
+                if (data.res == 'ok'){
                     // 添加成功
                     $(".add_jump").css({'left':$add_y+80,'top':$add_x+10,'display':'block'})
                     $(".add_jump").stop().animate({
@@ -191,13 +190,13 @@
                         "fast", function() {
                             $(".add_jump").fadeOut('fast',function(){
                                 // 重新设置用户购物车中商品的条目数
-                                $('#show_count').html(data.total_count);
+                                $('.show_count').html(data.total_count);
                             });
 			        });
                 }
                 else{
                     // 添加失败
-                    alert(data.errmsg)
+                    alert(data.error_msg)
                 }
             })
 		})

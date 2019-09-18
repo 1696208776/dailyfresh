@@ -7,7 +7,9 @@
 					<dl>
 						<dt>当前地址：</dt>
                         {% if address %}
-						    <dd><input type="radio" name="addr"><label>{{ address.addr }} （{{ address.receiver }} 收） {{ address.phone }}</label></dd>
+                            {% for addr in address %}
+                                <dd><input type="radio" name="addr"><label>{{ addr.addr }} （{{ addr.receiver }} 收） {{ addr.phone }} {% if addr.is_default == 1 %}(默认){% endif %}</label></dd>
+                            {% endfor %}
 					    {% else %}
                             <dd>无默认地址</dd>
                         {% endif %}

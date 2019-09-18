@@ -1,352 +1,451 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<title>å¤©å¤©ç”Ÿé²œ-é¦–é¡µ</title>
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="js/slide.js"></script>
+	<meta http-equiv="Content-Type" content="text/html;charset=gbk">
+    
+	<title>ÌìÌìÉúÏÊ-Ê×Ò³</title>
+	<link rel="stylesheet" type="text/css" href="http://pxk8eal6x.bkt.clouddn.com/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="http://pxk8eal6x.bkt.clouddn.com/static/css/main.css">
+	
+    
+	<script type="text/javascript" src="http://pxk8eal6x.bkt.clouddn.com/static/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="http://pxk8eal6x.bkt.clouddn.com/static/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://pxk8eal6x.bkt.clouddn.com/static/js/slide.js"></script>
+
 </head>
 <body>
+
+
 	<div class="header_con">
 		<div class="header">
-			<div class="welcome fl">æ¬¢è¿Žæ¥åˆ°å¤©å¤©ç”Ÿé²œ!</div>
+			<div class="welcome fl">»¶Ó­À´µ½ÌìÌìÉúÏÊ!</div>
 			<div class="fr">
-				<div class="login_info fl">
-					æ¬¢è¿Žæ‚¨ï¼š<em>å¼  å±±</em>
-				</div>
 				<div class="login_btn fl">
-					<a href="login.html">ç™»å½•</a>
+					<a href="/user/login/">µÇÂ¼</a>
 					<span>|</span>
-					<a href="register.html">æ³¨å†Œ</a>
+                    <a href="/user/register/">×¢²á</a>
 				</div>
 				<div class="user_link fl">
 					<span>|</span>
-					<a href="user_center_info.html">ç”¨æˆ·ä¸­å¿ƒ</a>
+					<a href="/user/">ÓÃ»§ÖÐÐÄ</a>
 					<span>|</span>
-					<a href="cart.html">æˆ‘çš„è´­ç‰©è½¦</a>
+					<a href="/cart/">ÎÒµÄ¹ºÎï³µ</a>
 					<span>|</span>
-					<a href="user_center_order.html">æˆ‘çš„è®¢å•</a>
+					<a href="/user/order/1">ÎÒµÄ¶©µ¥</a>
 				</div>
 			</div>
 		</div>		
 	</div>
 
+
+
+
 	<div class="search_bar clearfix">
-		<a href="index.html" class="logo fl"><img src="images/logo.png"></a>
+		<a href="/" class="logo fl"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/logo.png"></a>
 		<div class="search_con fl">
-			<input type="text" class="input_text fl" name="" placeholder="æœç´¢å•†å“">
-			<input type="button" class="input_btn fr" name="" value="æœç´¢">
+            <form method="get" action="/search">
+                <input type="text" class="input_text fl" name="q" placeholder="ËÑË÷ÉÌÆ·">
+                <input type="submit" class="input_btn fr" name="" value="ËÑË÷">
+            </form>
 		</div>
 		<div class="guest_cart fr">
-			<a href="#" class="cart_name fl">æˆ‘çš„è´­ç‰©è½¦</a>
-			<div class="goods_count fl" id="show_count">1</div>
+			<a href="/cart/" class="cart_name fl">ÎÒµÄ¹ºÎï³µ</a>
+			<div class="goods_count fl" id="show_count"></div>
 		</div>
 	</div>
 
+
+
+
 	<div class="navbar_con">
 		<div class="navbar">
-			<h1 class="fl">å…¨éƒ¨å•†å“åˆ†ç±»</h1>
+			<h1 class="fl">È«²¿ÉÌÆ··ÖÀà</h1>
 			<ul class="navlist fl">
-				<li><a href="">é¦–é¡µ</a></li>
+				<li><a href="/">Ê×Ò³</a></li>
 				<li class="interval">|</li>
-				<li><a href="">æ‰‹æœºç”Ÿé²œ</a></li>
+				<li><a href="">ÊÖ»úÉúÏÊ</a></li>
 				<li class="interval">|</li>
-				<li><a href="">æŠ½å¥–</a></li>
+				<li><a href="">³é½±</a></li>
 			</ul>
 		</div>
 	</div>
 
 	<div class="center_con clearfix">
+        <!-- ÉÌÆ··ÖÀà -->
 		<ul class="subnav fl">
-			<li><a href="#model01" class="fruit">æ–°é²œæ°´æžœ</a></li>
-			<li><a href="#model02" class="seafood">æµ·é²œæ°´äº§</a></li>
-			<li><a href="#model03" class="meet">çŒªç‰›ç¾Šè‚‰</a></li>
-			<li><a href="#model04" class="egg">ç¦½ç±»è›‹å“</a></li>
-			<li><a href="#model05" class="vegetables">æ–°é²œè”¬èœ</a></li>
-			<li><a href="#model06" class="ice">é€Ÿå†»é£Ÿå“</a></li>
+            
+			    <li><a href="#model01" class="fruit">ÐÂÏÊË®¹û</a></li>
+            
+			    <li><a href="#model02" class="seafood">º£ÏÊË®²ú</a></li>
+            
+			    <li><a href="#model03" class="meet">ÖíÈâÅ£Èâ</a></li>
+            
+			    <li><a href="#model04" class="egg">ÇÝÀàµ°Æ·</a></li>
+            
+			    <li><a href="#model05" class="vegetables">ÐÂÏÊÊß²Ë</a></li>
+            
+			    <li><a href="#model06" class="ice">ËÙ¶³Ê³Æ·</a></li>
+            
 		</ul>
+        <!-- ÂÖ²¥Í¼ -->
 		<div class="slide fl">
 			<ul class="slide_pics">
-				<li><img src="images/slide.jpg" alt="å¹»ç¯ç‰‡"></li>
-				<li><img src="images/slide02.jpg" alt="å¹»ç¯ç‰‡"></li>
-				<li><img src="images/slide03.jpg" alt="å¹»ç¯ç‰‡"></li>
-				<li><img src="images/slide04.jpg" alt="å¹»ç¯ç‰‡"></li>
+                
+				    <li><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/slide.jpg" alt="»ÃµÆÆ¬"></li>
+                
+				    <li><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/slide02.jpg" alt="»ÃµÆÆ¬"></li>
+                
+				    <li><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/slide03.jpg" alt="»ÃµÆÆ¬"></li>
+                
+				    <li><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/slide04.jpg" alt="»ÃµÆÆ¬"></li>
+                
 			</ul>
 			<div class="prev"></div>
 			<div class="next"></div>
 			<ul class="points"></ul>
 		</div>
+        <!-- ´ÙÏú»î¶¯ -->
 		<div class="adv fl">
-			<a href="#"><img src="images/adv01.jpg"></a>
-			<a href="#"><img src="images/adv02.jpg"></a>
+            
+			    <a href="http://127.0.0.1:8000"><img src="http://pxk8eal6x.bkt.clouddn.com/static/adv01.jpg"></a>
+            
+			    <a href="http://127.0.0.1:8000"><img src="http://pxk8eal6x.bkt.clouddn.com/static/adv02.jpg"></a>
+            
 		</div>
 	</div>
 
+    
+    <!-- ·ÖÀàÉÌÆ· -->
 	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model01">æ–°é²œæ°´æžœ</h3>
+            <!-- 1 »ñÈ¡µ±Ç°Ñ­»·´ÎÊý -->
+			<h3 class="fl" id="model01">ÐÂÏÊË®¹û</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-				<a href="#">é²œèŠ’</a>
-				<a href="#">åŠ å·žæå­</a>
-				<a href="#">äºšé©¬é€Šç‰›æ²¹æžœ</a>
+                
+				    <a href="/goods/2">²ÝÝ®</a>
+				
+				    <a href="/goods/3">ÆÏÌÑ</a>
+				
+				    <a href="/goods/4">ÄûÃÊ</a>
+				
+				    <a href="/goods/5">ÆæÒì¹û</a>
+				
 			</div>
-			<a href="#" class="goods_more fr" id="fruit_more">æŸ¥çœ‹æ›´å¤š ></a>
+			<a href="/list/1/1" class="goods_more fr" id="fruit_more">²é¿´¸ü¶à ></a>
 		</div>
 
 		<div class="goods_con clearfix">
-			<div class="goods_banner fl"><img src="images/banner01.jpg"></div>
+			<div class="goods_banner fl"><img src="http://pxk8eal6x.bkt.clouddn.com/static/banner01.jpg"></div>
 			<ul class="goods_list fl">
+                
 				<li>
-					<h4><a href="#">è‰èŽ“</a></h4>
-					<a href="#"><img src="images/goods/goods003.jpg"></a>
-					<div class="prize">Â¥ 30.00</div>
+					<h4><a href="/goods/2">²ÝÝ®</a></h4>
+					<a href="/goods/2"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods/goods003.jpg"></a>
+					<div class="prize"> 12.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">è‘¡è„</a></h4>
-					<a href="#"><img src="images/goods/goods002.jpg"></a>
-					<div class="prize">Â¥ 5.50</div>
+					<h4><a href="/goods/3">ÆÏÌÑ</a></h4>
+					<a href="/goods/3"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods/goods002.jpg"></a>
+					<div class="prize"> 15.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">æŸ æª¬</a></h4>
-					<a href="#"><img src="images/goods/goods001.jpg"></a>
-					<div class="prize">Â¥ 3.90</div>
+					<h4><a href="/goods/4">ÄûÃÊ</a></h4>
+					<a href="/goods/4"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods/goods001.jpg"></a>
+					<div class="prize"> 14.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">å¥‡å¼‚æžœ</a></h4>
-					<a href="#"><img src="images/goods/goods012.jpg"></a>
-					<div class="prize">Â¥ 25.80</div>
+					<h4><a href="/goods/5">ÆæÒì¹û</a></h4>
+					<a href="/goods/5"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods/goods012.jpg"></a>
+					<div class="prize"> 13.00</div>
 				</li>
+				
 			</ul>
 		</div>
 	</div>
-
+    
+    <!-- ·ÖÀàÉÌÆ· -->
 	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model02">æµ·é²œæ°´äº§</h3>
+            <!-- 2 »ñÈ¡µ±Ç°Ñ­»·´ÎÊý -->
+			<h3 class="fl" id="model02">º£ÏÊË®²ú</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-				<a href="#">æ²³è™¾</a>
-				<a href="#">æ‰‡è´</a>				
+                
+				    <a href="/goods/6">ÇàÏº</a>
+				
+				    <a href="/goods/7">ÉÈ±´</a>
+				
+				    <a href="/goods/8">Çïµ¶Óã</a>
+				
+				    <a href="/goods/9">»ùÎ§Ïº</a>
+				
 			</div>
-			<a href="#" class="goods_more fr">æŸ¥çœ‹æ›´å¤š ></a>
+			<a href="/list/2/1" class="goods_more fr" id="fruit_more">²é¿´¸ü¶à ></a>
 		</div>
 
 		<div class="goods_con clearfix">
-			<div class="goods_banner fl"><img src="images/banner02.jpg"></div>
+			<div class="goods_banner fl"><img src="http://pxk8eal6x.bkt.clouddn.com/static/banner02.jpg"></div>
 			<ul class="goods_list fl">
+                
 				<li>
-					<h4><a href="#">é’å²›é‡Žç”Ÿæµ·æ•å¤§é’è™¾</a></h4>
-					<a href="#"><img src="images/goods/goods018.jpg"></a>
-					<div class="prize">Â¥ 48.00</div>
+					<h4><a href="/goods/6">ÇàÏº</a></h4>
+					<a href="/goods/6"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods/goods018.jpg"></a>
+					<div class="prize"> 48.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">æ‰‡è´</a></h4>
-					<a href="#"><img src="images/goods/goods019.jpg"></a>
-					<div class="prize">Â¥ 46.00</div>
+					<h4><a href="/goods/7">ÉÈ±´</a></h4>
+					<a href="/goods/7"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods/goods019.jpg"></a>
+					<div class="prize"> 48.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">å†·å†»ç§‹åˆ€é±¼</a></h4>
-					<a href="#"><img src="images/goods/goods020.jpg"></a>
-					<div class="prize">Â¥ 19.00</div>
+					<h4><a href="/goods/8">Çïµ¶Óã</a></h4>
+					<a href="/goods/8"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods/goods020.jpg"></a>
+					<div class="prize"> 48.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">åŸºå›´è™¾</a></h4>
-					<a href="#"><img src="images/goods/goods021.jpg"></a>
-					<div class="prize">Â¥ 25.00</div>
+					<h4><a href="/goods/9">»ùÎ§Ïº</a></h4>
+					<a href="/goods/9"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods/goods021.jpg"></a>
+					<div class="prize"> 48.00</div>
 				</li>
+				
 			</ul>
 		</div>
 	</div>
-
+    
+    <!-- ·ÖÀàÉÌÆ· -->
 	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model03">çŒªç‰›ç¾Šè‚‰</h3>
+            <!-- 3 »ñÈ¡µ±Ç°Ñ­»·´ÎÊý -->
+			<h3 class="fl" id="model03">ÖíÈâÅ£Èâ</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-				<a href="#">é²œèŠ’</a>
-				<a href="#">åŠ å·žæå­</a>
-				<a href="#">äºšé©¬é€Šç‰›æ²¹æžœ</a>
+                
+				    <a href="/goods/10">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/11">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/12">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/13">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
 			</div>
-			<a href="#" class="goods_more fr">æŸ¥çœ‹æ›´å¤š ></a>
+			<a href="/list/3/1" class="goods_more fr" id="fruit_more">²é¿´¸ü¶à ></a>
 		</div>
 
 		<div class="goods_con clearfix">
-			<div class="goods_banner fl"><img src="images/banner03.jpg"></div>
+			<div class="goods_banner fl"><img src="http://pxk8eal6x.bkt.clouddn.com/static/banner03.jpg"></div>
 			<ul class="goods_list fl">
+                
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/10">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/10"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/11">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/11"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/12">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/12"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/13">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/13"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 			</ul>
 		</div>
 	</div>
-
+    
+    <!-- ·ÖÀàÉÌÆ· -->
 	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model04">ç¦½ç±»è›‹å“</h3>
+            <!-- 4 »ñÈ¡µ±Ç°Ñ­»·´ÎÊý -->
+			<h3 class="fl" id="model04">ÇÝÀàµ°Æ·</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-				<a href="#">é²œèŠ’</a>
-				<a href="#">åŠ å·žæå­</a>
-				<a href="#">äºšé©¬é€Šç‰›æ²¹æžœ</a>
+                
+				    <a href="/goods/14">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/15">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/16">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/17">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
 			</div>
-			<a href="#" class="goods_more fr">æŸ¥çœ‹æ›´å¤š ></a>
+			<a href="/list/4/1" class="goods_more fr" id="fruit_more">²é¿´¸ü¶à ></a>
 		</div>
 
 		<div class="goods_con clearfix">
-			<div class="goods_banner fl"><img src="images/banner04.jpg"></div>
+			<div class="goods_banner fl"><img src="http://pxk8eal6x.bkt.clouddn.com/static/banner04.jpg"></div>
 			<ul class="goods_list fl">
+                
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/14">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/14"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/15">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/15"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/16">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/16"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/17">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/17"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 			</ul>
 		</div>
 	</div>
-
+    
+    <!-- ·ÖÀàÉÌÆ· -->
 	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model05">æ–°é²œè”¬èœ</h3>
+            <!-- 5 »ñÈ¡µ±Ç°Ñ­»·´ÎÊý -->
+			<h3 class="fl" id="model05">ÐÂÏÊÊß²Ë</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-				<a href="#">é²œèŠ’</a>
-				<a href="#">åŠ å·žæå­</a>
-				<a href="#">äºšé©¬é€Šç‰›æ²¹æžœ</a>
+                
+				    <a href="/goods/19">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/20">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/21">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/18">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
 			</div>
-			<a href="#" class="goods_more fr">æŸ¥çœ‹æ›´å¤š ></a>
+			<a href="/list/5/1" class="goods_more fr" id="fruit_more">²é¿´¸ü¶à ></a>
 		</div>
 
 		<div class="goods_con clearfix">
-			<div class="goods_banner fl"><img src="images/banner05.jpg"></div>
+			<div class="goods_banner fl"><img src="http://pxk8eal6x.bkt.clouddn.com/static/banner05.jpg"></div>
 			<ul class="goods_list fl">
+                
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/19">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/19"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/20">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/20"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/21">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/21"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/18">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/18"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 			</ul>
 		</div>
 	</div>
-
+    
+    <!-- ·ÖÀàÉÌÆ· -->
 	<div class="list_model">
 		<div class="list_title clearfix">
-			<h3 class="fl" id="model06">é€Ÿå†»é£Ÿå“</h3>
+            <!-- 6 »ñÈ¡µ±Ç°Ñ­»·´ÎÊý -->
+			<h3 class="fl" id="model06">ËÙ¶³Ê³Æ·</h3>
 			<div class="subtitle fl">
 				<span>|</span>
-				<a href="#">é²œèŠ’</a>
-				<a href="#">åŠ å·žæå­</a>
-				<a href="#">äºšé©¬é€Šç‰›æ²¹æžœ</a>
+                
+				    <a href="/goods/23">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/24">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/25">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
+				    <a href="/goods/22">Î¬¶àÀûÑÇÆÏÌÑ</a>
+				
 			</div>
-			<a href="#" class="goods_more fr">æŸ¥çœ‹æ›´å¤š ></a>
+			<a href="/list/6/1" class="goods_more fr" id="fruit_more">²é¿´¸ü¶à ></a>
 		</div>
 
 		<div class="goods_con clearfix">
-			<div class="goods_banner fl"><img src="images/banner06.jpg"></div>
+			<div class="goods_banner fl"><img src="http://pxk8eal6x.bkt.clouddn.com/static/banner06.jpg"></div>
 			<ul class="goods_list fl">
+                
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/23">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/23"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/24">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/24"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/25">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/25"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 				<li>
-					<h4><a href="#">ç»´å¤šåˆ©äºšè‘¡è„</a></h4>
-					<a href="#"><img src="images/goods.jpg"></a>
-					<div class="prize">Â¥ 38.00</div>
+					<h4><a href="/goods/22">Î¬¶àÀûÑÇÆÏÌÑ</a></h4>
+					<a href="/goods/22"><img src="http://pxk8eal6x.bkt.clouddn.com/static/images/goods.jpg"></a>
+					<div class="prize"> 10.00</div>
 				</li>
+				
 			</ul>
 		</div>
 	</div>
+    
+
 
 	<div class="footer">
 		<div class="foot_link">
-			<a href="#">å…³äºŽæˆ‘ä»¬</a>
+			<a href="#">¹ØÓÚÎÒÃÇ</a>
 			<span>|</span>
-			<a href="#">è”ç³»æˆ‘ä»¬</a>
+			<a href="#">ÁªÏµÎÒÃÇ</a>
 			<span>|</span>
-			<a href="#">æ‹›è˜äººæ‰</a>
+			<a href="#">ÕÐÆ¸ÈË²Å</a>
 			<span>|</span>
-			<a href="#">å‹æƒ…é“¾æŽ¥</a>		
+			<a href="#">ÓÑÇéÁ´½Ó</a>		
 		</div>
-		<p>CopyRight Â© 2016 åŒ—äº¬å¤©å¤©ç”Ÿé²œä¿¡æ¯æŠ€æœ¯æœ‰é™å…¬å¸ All Rights Reserved</p>
-		<p>ç”µè¯ï¼š010-****888    äº¬ICPå¤‡*******8å·</p>
+		<p>CopyRight  2016 ±±¾©ÌìÌìÉúÏÊÐÅÏ¢¼¼ÊõÓÐÏÞ¹«Ë¾ All Rights Reserved</p>
+		<p>µç»°£º010-****888    ¾©ICP±¸*******8ºÅ</p>
 	</div>
-	<script type="text/javascript" src="js/slideshow.js"></script>
-	<script type="text/javascript">
-		BCSlideshow('focuspic');
-		var oFruit = document.getElementById('fruit_more');
-		var oShownum = document.getElementById('show_count');
-
-		var hasorder = localStorage.getItem('order_finish');
-
-		if(hasorder)
-		{
-			oShownum.innerHTML = '2';
-		}
-
-		oFruit.onclick = function(){
-			window.location.href = 'list.html';
-		}
-	</script>
+    
+    
+    
+	
 </body>
 </html>

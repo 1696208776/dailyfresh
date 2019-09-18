@@ -177,26 +177,28 @@ class UserInfoView(LoginRequiredMixin, View):
 
         # 数据库查询用户信息
         user = request.user
-        address = Address.objects.get(user=user, is_default=True)
+        address = Address.objects.filter(user=user, is_default=1)
 
-        # 获取用户的浏览记录
-        # from redis import StrictRedis
-        # sr = StrictRedis(host='172.16.179.130', port='6379', db=9)等价于下面的自带封装
-        con = get_redis_connection('default')
+        conn = get_redis_connection('default')
 
+        # 设置redis数据库的key
         history_key = 'history_%d' % user.id
 
         # 获取用户最新浏览的5个商品的id
-        sku_ids = con.lrange(history_key, 0, 4)
+        sku_ids = conn.lrange(history_key, 0, 4)
 
         # 根据sku_id查询商品的具体信息
-        goods_li = [GoodsSKU.objects.filter(id=id) for id in sku_ids]
+        goods_list = []
+        for sku_id in sku_ids:
+            goods = GoodsSKU.objects.get(id=sku_id)
+            goods_list.append(goods)
+        # goods_li = [GoodsSKU.objects.filter(id=id) for id in sku_ids]
 
         # 组织上下文
         context = {
             'page': 'user',
             'address': address,
-            'goods_li': goods_li,
+            'goods_list': goods_list,
         }
 
         return render(request, 'user_center_info.html', context=context)
@@ -273,7 +275,8 @@ class AddressView(LoginRequiredMixin, View):
         user = request.user
         name = user.username
         # 数据库获取用户的默认和其他地址信息
-        address = Address.objects.get(user=user, is_default=True)
+        address = Address.objects.filter(user=user)
+        print(address)
 
         return render(request, 'user_center_site.html', {'page': 'address', 'address': address, 'name': name})
 

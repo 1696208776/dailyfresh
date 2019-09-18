@@ -62,8 +62,8 @@ def generate_static_index_html():
         }
 
         # 产生静态页面
-        temp = loader.get_template('static_index.html')
-        static_index_html = temp.render(context)
+        template = loader.get_template('static_index.html')
+        static_index_html = template.render(context).encode('gbk', 'ignore').decode('gbk')
 
         save_path = os.path.join(settings.BASE_DIR, 'static/index.html')
 

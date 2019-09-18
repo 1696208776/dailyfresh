@@ -11,7 +11,7 @@
 		<div class="navbar">
 			<h1 class="fl">全部商品分类</h1>
 			<ul class="navlist fl">
-				<li><a href="">首页</a></li>
+				<li><a href="{% url 'goods:index' %}">首页</a></li>
 				<li class="interval">|</li>
 				<li><a href="">手机生鲜</a></li>
 				<li class="interval">|</li>
@@ -21,21 +21,24 @@
 	</div>
 
 	<div class="center_con clearfix">
+        <!-- 商品分类 -->
 		<ul class="subnav fl">
             {% for type in types %}
 			    <li><a href="#model0{{ forloop.counter }}" class="{{ type.logo }}">{{ type.name }}</a></li>
             {% endfor %}
 		</ul>
+        <!-- 轮播图 -->
 		<div class="slide fl">
 			<ul class="slide_pics">
                 {% for banner in goods_banners  %}
-				    <li><a href="#"><img src="{{ banner.image.url }}" alt="幻灯片"></a></li>
+				    <li><img src="{{ banner.image.url }}" alt="幻灯片"></li>
                 {% endfor %}
 			</ul>
 			<div class="prev"></div>
 			<div class="next"></div>
 			<ul class="points"></ul>
 		</div>
+        <!-- 促销活动 -->
 		<div class="adv fl">
             {% for banner in promotion_banners %}
 			    <a href="{{ banner.url }}"><img src="{{ banner.image.url }}"></a>
@@ -44,16 +47,18 @@
 	</div>
 
     {% for type in types %}
+    <!-- 分类商品 -->
 	<div class="list_model">
 		<div class="list_title clearfix">
+            <!-- {{ forloop.counter }} 获取当前循环次数 -->
 			<h3 class="fl" id="model0{{ forloop.counter }}">{{ type.name }}</h3>
 			<div class="subtitle fl">
 				<span>|</span>
                 {% for banner in type.title_banners %}
-				    <a href="#">{{ banner.sku.name }}</a>
+				    <a href="{% url 'goods:detail' banner.sku.id  %}">{{ banner.sku.name }}</a>
 				{% endfor %}
 			</div>
-			<a href="#" class="goods_more fr" id="fruit_more">查看更多 ></a>
+			<a href="{% url 'goods:list' type.id 1 %}" class="goods_more fr" id="fruit_more">查看更多 ></a>
 		</div>
 
 		<div class="goods_con clearfix">
@@ -61,8 +66,8 @@
 			<ul class="goods_list fl">
                 {% for banner in type.image_banners %}
 				<li>
-					<h4><a href="#">{{ banner.sku.name }}</a></h4>
-					<a href="#"><img src="{{ banner.sku.image.url }}"></a>
+					<h4><a href="{% url 'goods:detail' banner.sku.id  %}">{{ banner.sku.name }}</a></h4>
+					<a href="{% url 'goods:detail' banner.sku.id  %}"><img src="{{ banner.sku.image.url }}"></a>
 					<div class="prize">¥ {{ banner.sku.price }}</div>
 				</li>
 				{% endfor %}
